@@ -55,7 +55,7 @@ Write a function named containsWorld that takes in a string or number of any len
 
 const containsWorld = (input) => {
   // Solution code here...
-  let regex = /[world]+[World]/
+  let regex = /world/
   return regex.test(input);
 };
 
@@ -69,8 +69,13 @@ Return an array containing all the matches.
 
 const isCapitalized = (str) => {
   // Solution code here...
-  let regex = /[A-Z]\w+/
-  return str.match(regex);
+  let regex = /[A-Z]\w+/g
+  let arr =str.match(regex);
+  if (arr == null){
+    return []
+  }else{
+    return arr;
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -81,6 +86,14 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 
 const citiesAtoJ = (arr) => {
   // Solution code here...
+  let regex = /[A-J]/
+  let newArr =[]
+  arr.forEach(str =>{
+    if(regex.test(str.split(/(\s)/)[0])){
+      newArr.push(str)
+    }
+  })
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
