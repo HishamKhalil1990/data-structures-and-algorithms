@@ -139,36 +139,20 @@ const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
   recipe.ingredients.forEach(element=>{
-    let arr = element.split(' ');
-    let str = '';
-    if (arr.length >= 4){
-      for (let i = 2; i < arr.length; i++){
-        if (i == arr.length-1){
-          str = str + arr[i];
-        }else{
-          str = str + arr[i]+ ' ';
-        }
+    let counter = 0;
+    for(let i = 0; i < element.length; i++){
+      let char = element.slice(i,i+1);
+      if (char == " "){
+        counter++
       }
-    } else {
-      str = arr[2];
+      if (counter == 2){
+        result.push(element.slice(i+1,element.length));
+        break;
+      }
     }
-    result.push(str);
   })
   return result;
 };
-
-// str = element.split();
-//     for(let i = 0; i < element.length; i++){
-//       let counter = 0;
-//       let char = element.slice(i,i+1);
-//       if (char === ","){
-//         counter++
-//       }
-//       if(counter == 2){
-//         result.push(element.slice(i+1,element.length))
-//         break;
-//       }
-//     }
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
