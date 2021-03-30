@@ -84,7 +84,10 @@ const notInFirstArray = (forbiddenValues, arr) => {
   if (forbiddenValues.length <= arr.length) {
     arr1[0] = forbiddenValues;
     arr1[1] = arr;
-  } else {
+  } else if(forbiddenValues.length == 0 || arr.length == 0){
+    arr1[0] = forbiddenValues;
+    arr1[1] = arr;
+  }else{
     arr1[0] = arr;
     arr1[1] = forbiddenValues;
   }
