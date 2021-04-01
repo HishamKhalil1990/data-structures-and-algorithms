@@ -77,10 +77,26 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 
 const divisibleByFiveTwoToThePower = (input) => {
   // Solution code here...
-  input.forEach(ele=>{
-    ele.filter(a=> typeof a == "string"? true:false);
+  const arr = input.map(ele=>{
+    const arr2 = [];
+    ele.forEach(a=> {
+      if(typeof a !== 'string'){
+        arr2.push(a);
+      }
+    });
+    return arr2;
   })
-  return input.map(ele=>ele.filter(a=>a%5==0? true: false).map(a=>2**a));
+  console.log(input);
+  const arr3 = arr.map(ele=>{
+    let result;
+    if(ele.length == 0){
+      result =  ele;
+    }else{
+      result =  ele.filter(a=>a%5==0? true: false).map(a=>2**a)
+    }
+    return result;
+  });
+  return arr3;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -147,6 +163,25 @@ let starWarsData = [{
 
 let findMaleAndFemale = (data) => {
   // Solution code here...
+  const arr = data.map(obj => {
+    let result;
+      if(obj.gender == "female" || obj.gender == "male")
+      result = obj.name;
+      else{
+        result = "";
+      }
+      return result;
+    })
+    const arr2 = arr.filter(a => a !== ""? true: false);
+    let str = ""; 
+    for(let i = 0; i < arr2.length; i++){
+      if(i == arr2.length - 1){
+        str = str + arr2[i]
+      }else{
+        str = str + arr2[i] + " and ";
+      }
+    }
+  return str;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -157,6 +192,24 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 
 let findShortest = (data) => {
   // Solution code here...
+  const arr =data.map(obj => {
+    const arr1 = obj.name.split(" ");
+    let str ="";
+    arr1.forEach(a => {str += a});
+    return str;
+  })
+  const str = arr.reduce((acc,ele)=>{
+    console.log(ele);
+    console.log(typeof ele);
+    if(acc == " "){
+      acc = ele;
+    }else if (ele.length <= acc.length){ 
+      acc = ele; 
+    }
+    console.log(ele);
+    console.log(typeof ele);
+  }," ")
+  console.log(str);
 };
 
 /* ------------------------------------------------------------------------------------------------
