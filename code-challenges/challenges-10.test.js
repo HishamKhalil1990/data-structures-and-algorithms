@@ -199,17 +199,14 @@ let findShortest = (data) => {
     return str;
   })
   const str = arr.reduce((acc,ele)=>{
-    console.log(ele);
-    console.log(typeof ele);
     if(acc == " "){
       acc = ele;
     }else if (ele.length <= acc.length){ 
       acc = ele; 
     }
-    console.log(ele);
-    console.log(typeof ele);
+    return acc
   }," ")
-  console.log(str);
+  return str;
 };
 
 /* ------------------------------------------------------------------------------------------------
