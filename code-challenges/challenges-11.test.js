@@ -72,13 +72,13 @@ on several rules:
 Return either true or false.
 
 Note: if you ever need to validate an email using a regex in practice, the Internet has the actual regex you should use. It's many many lines long.
+
 ------------------------------------------------------------------------------------------------ */
 
 const validateEmail = (email) => {
   // Solution code here...
-  const regex = /^[A-Z,a-z][\w-\.]+[A-Z,a-z]@([\w-]+\.)+[\w-]{3,4}$/g
-  const regex2 =/\.{0,2}/g
-  return (regex.test(email)&&regex2.test(email));
+  const regex = /^[A-Z,a-z]\w+(\.\w+)?@([\w-]+\.)+[\w-]{3,4}$/g
+  return (regex.test(email));
 };
 
 /* ------------------------------------------------------------------------------------------------
