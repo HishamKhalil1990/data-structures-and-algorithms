@@ -9,4 +9,4 @@
 ### Big O is leniar
 
 ## Solution
-![solution](https://i.ibb.co/L0J4rLr/Untitled-2.jpg)
+![solution](https://i.ibb.co/MPvYgGz/Untitled-3.jpg)
