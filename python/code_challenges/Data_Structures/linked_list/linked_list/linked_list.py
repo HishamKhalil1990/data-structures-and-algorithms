@@ -40,4 +40,3 @@ class Linked_List:
             return "empty"
         return stored_data
 
-# print(actual)
