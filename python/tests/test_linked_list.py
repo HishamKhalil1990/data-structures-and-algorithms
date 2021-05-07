@@ -1,5 +1,5 @@
 import pytest
-from code_challenges.linked_list.linked_list.linked_list import Node,Linked_List
+from code_challenges.Data_Structures.linked_list.linked_list.linked_list import Node,Linked_List
 
 
 def test_import():
