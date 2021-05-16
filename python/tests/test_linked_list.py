@@ -51,6 +51,14 @@ def test_append2():
     actual = str(linked)
     assert actual == expected
 
+def test_append_multiple(linked_instance2):
+    expected = "head -> [1] -> [3] -> [2] -> [5] -> [6] -> X"
+    linked = linked_instance2
+    linked.append(5)
+    linked.append(6)
+    actual = str(linked)
+    assert actual == expected
+
 def test_insert_before1(linked_instance2):
     expected = "head -> [1] -> [5] -> [3] -> [2] -> X"
     linked = linked_instance2
@@ -58,7 +66,7 @@ def test_insert_before1(linked_instance2):
     actual = str(linked)
     assert actual == expected
 
-def test_insert_before2(linked_instance2):
+def test_insert_before_head(linked_instance2):
     expected = "head -> [5] -> [1] -> [3] -> [2] -> X"
     linked = linked_instance2
     linked.insert_before(1,5)
@@ -93,6 +101,13 @@ def test_insert_after2(linked_instance2):
 def test_insert_after3(linked_instance3):
     expected = "head -> [1] -> [2] -> [5] -> [2] -> X"
     linked = linked_instance3
+    linked.insert_after(2,5)
+    actual = str(linked)
+    assert actual == expected
+
+def test_insert_after_end(linked_instance2):
+    expected = "head -> [1] -> [3] -> [2] -> [5] -> X"
+    linked = linked_instance2
     linked.insert_after(2,5)
     actual = str(linked)
     assert actual == expected
