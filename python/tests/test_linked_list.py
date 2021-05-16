@@ -51,12 +51,55 @@ def test_append2():
     actual = str(linked)
     assert actual == expected
 
-def insert_before1(linked_instance3):
+def test_insert_before1(linked_instance2):
     expected = "head -> [1] -> [5] -> [3] -> [2] -> X"
-    linked = linked_instance3
-    linked.insert_before(5)
+    linked = linked_instance2
+    linked.insert_before(3,5)
     actual = str(linked)
     assert actual == expected
+
+def test_insert_before2(linked_instance2):
+    expected = "head -> [5] -> [1] -> [3] -> [2] -> X"
+    linked = linked_instance2
+    linked.insert_before(1,5)
+    actual = str(linked)
+    assert actual == expected
+
+def test_insert_before3(linked_instance3):
+    expected = "head -> [1] -> [5] -> [2] -> [2] -> X"
+    linked = linked_instance3
+    linked.insert_before(2,5)
+    actual = str(linked)
+    assert actual == expected
+
+def test_insert_before4(linked_instance2):
+    with pytest.raises(ValueError):
+        linked_instance2.insert_before(4,5)
+
+def test_insert_after1(linked_instance2):
+    expected = "head -> [1] -> [3] -> [5] -> [2] -> X"
+    linked = linked_instance2
+    linked.insert_after(3,5)
+    actual = str(linked)
+    assert actual == expected
+
+def test_insert_after2(linked_instance2):
+    expected = "head -> [1] -> [5] -> [3] -> [2] -> X"
+    linked = linked_instance2
+    linked.insert_after(1,5)
+    actual = str(linked)
+    assert actual == expected
+
+def test_insert_after3(linked_instance3):
+    expected = "head -> [1] -> [2] -> [5] -> [2] -> X"
+    linked = linked_instance3
+    linked.insert_after(2,5)
+    actual = str(linked)
+    assert actual == expected
+
+def test_insert_after4(linked_instance2):
+    with pytest.raises(ValueError):
+        linked_instance2.insert_after(4,5)
 
 @pytest.fixture
 def linked_instance():
@@ -83,6 +126,6 @@ def linked_instance2():
 def linked_instance3():
     linked = Linked_List()
     linked.insert(2)
-    linked.insert(3)
+    linked.insert(2)
     linked.insert(1)
     return linked

@@ -1,6 +1,3 @@
-from python.tests.test_linked_list import test_head_pointer
-
-
 class Node:
     def __init__(self,data):
         self.data = data
@@ -67,12 +64,36 @@ class Linked_List:
             self.head = Node(value)
 
     def insert_before(self,value,new_value):
+        not_found = True
+        current = self.head
+        if current.data == value:
+            new_node = Node(new_value)
+            new_node.next = current
+            self.head = new_node
+            not_found = False
+        else:
+            while (current.next):
+                if current.next.data == value:
+                    new_node = Node(new_value)
+                    new_node.next = current.next
+                    current.next = new_node
+                    not_found = False
+                    break
+                current = current.next
+        if not_found:
+            raise ValueError
+
+    def insert_after(self,value,new_value):
+        not_found = True
         current = self.head
         while (current):
-            if current.next.data == value:
+            if current.data == value:
                 new_node = Node(new_value)
                 new_node.next = current.next
                 current.next = new_node
+                not_found = False
                 break
             current = current.next
+        if not_found:
+            raise ValueError
 
