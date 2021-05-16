@@ -1,7 +1,6 @@
 import pytest
 from code_challenges.Data_Structures.linked_list.linked_list.linked_list import Linked_List
 
-
 def test_import():
     assert Linked_List
 
