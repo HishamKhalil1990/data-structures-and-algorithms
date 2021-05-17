@@ -97,3 +97,27 @@ class Linked_List:
         if not_found:
             raise ValueError
 
+    def kth_from_end(self,k):
+        not_found = True
+        current = self.head
+        counter = 0
+        value = 0
+        while (current):
+            if current.data:
+                counter += 1
+            current = current.next
+        current = self.head
+        index_counter = counter - 1
+        for num in range(0,counter):
+            if index_counter == k:
+                not_found = False
+                value = current.data
+                break
+            else:
+                index_counter -= 1
+                current = current.next
+        if not_found:
+            raise ValueError
+        else:
+            return value
+

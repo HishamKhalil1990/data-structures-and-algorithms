@@ -5,11 +5,15 @@
 ### the challenge was to create two classes, one for nodes and one for the linked list and test the classes API
 
 ## Approach & Efficiency
-### i create the class to behave as single linked list, the nodes are connected to each other in one direction. each node pointer to the next node only. the class can add the node to the list beginning or ending and can put it before or after a wanted node
+### i create the class to behave as single linked list, the nodes are connected to each other in one direction. each node pointer to the next node only. the class can add the node to the list beginning or ending and can put it before or after a wanted node. by using the node index in a linked list method, the node value can be obtained
 ### Big O is leniar
 
 ## Whiteboard Process
+
+### ll-insertions
 ![ll-insertions](img/ll-insertions.jpg)
+#### ll-kth-from-end
+![ll-kth-from-end](img/ll-kth-from-end.jpg)
 
 ## API
 #### Linked_list class:
@@ -20,6 +24,7 @@
 - `append` takes any value as a parameter and add a new node with the given value to the end of the list
 - `insert_before` takes **_value_** , **_new_value_** as parameters add a new node with the given **_new_value_** immediately before the first **_value_** node
 - `insert_after` takes **_value_** , **_new_value_** as parameters add a new node with the given **_new_value_** immediately after the first **_value_** node
+- `kth_from_end` takes a number **_k_**  as a parameter and return the node’s value that is **_k_** from the end of the linked list
 
 #### Node class:
 - `__init__` the class constructor which use to create instances
@@ -37,6 +42,8 @@
 - to search you can use `linked_list_instance.includes(searched_value)`
 #### for getting the linked list values as a string then:
 - to get the values you can use `str(linked_list_instance)`
+#### to get the node value using the node index from the end inside the linked list then:
+- to get the values you can use `kth_from_end(k_index)`
 
 ## code link
 [linked_list](linked_list/linked_list.py)
