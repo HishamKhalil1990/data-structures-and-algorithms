@@ -13,7 +13,7 @@
 ### ll-insertions
 ![ll-insertions](img/ll-insertions.jpg)
 #### ll-kth-from-end
-![ll-kth-from-end](img/ll-insertions.jpg)
+![ll-kth-from-end](img/ll-kth-from-end.jpg)
 
 ## API
 #### Linked_list class:
