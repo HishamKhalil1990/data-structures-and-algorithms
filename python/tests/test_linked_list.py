@@ -116,39 +116,39 @@ from code_challenges.Data_Structures.linked_list.linked_list.linked_list import 
 #     with pytest.raises(ValueError):
 #         linked_instance2.insert_after(4,5)
 
-def test_kth_from_end_1(linked_instance4):
-    excepted = 2
-    actual = linked_instance4.kth_from_end(0)
-    assert actual == excepted
+# def test_kth_from_end_1(linked_instance4):
+#     excepted = 2
+#     actual = linked_instance4.kth_from_end(0)
+#     assert actual == excepted
 
-def test_kth_from_end_2(linked_instance4):
-    excepted = 3
-    actual = linked_instance4.kth_from_end(2)
-    assert actual == excepted
+# def test_kth_from_end_2(linked_instance4):
+#     excepted = 3
+#     actual = linked_instance4.kth_from_end(2)
+#     assert actual == excepted
 
-def test_kth_from_end_3(linked_instance4):
-    excepted = 7
-    actual = linked_instance4.kth_from_end(4)
-    assert actual == excepted
+# def test_kth_from_end_3(linked_instance4):
+#     excepted = 7
+#     actual = linked_instance4.kth_from_end(4)
+#     assert actual == excepted
 
-def test_kth_from_end_4(linked_instance4):
-    excepted = 10
-    actual = linked_instance4.kth_from_end(7)
-    assert actual == excepted
+# def test_kth_from_end_4(linked_instance4):
+#     excepted = 10
+#     actual = linked_instance4.kth_from_end(7)
+#     assert actual == excepted
 
-def test_kth_from_end_5(linked_instance4):
-    with pytest.raises(ValueError):
-        linked_instance4.kth_from_end(9)
+# def test_kth_from_end_5(linked_instance4):
+#     with pytest.raises(ValueError):
+#         linked_instance4.kth_from_end(9)
 
-def test_kth_from_end_6():
-    linked = Linked_List()
-    with pytest.raises(ValueError):
-        linked.kth_from_end(0)
+# def test_kth_from_end_6():
+#     linked = Linked_List()
+#     with pytest.raises(ValueError):
+#         linked.kth_from_end(0)
 
-def test_kth_from_end_7():
-    linked = Linked_List()
-    with pytest.raises(ValueError):
-        linked.kth_from_end('a')
+# def test_kth_from_end_7():
+#     linked = Linked_List()
+#     with pytest.raises(ValueError):
+#         linked.kth_from_end('a')
 
 # @pytest.fixture
 # def linked_instance():
@@ -179,15 +179,15 @@ def test_kth_from_end_7():
 #     linked.insert(1)
 #     return linked
 
-@pytest.fixture
-def linked_instance4():
-    linked = Linked_List()
-    linked.insert(2)
-    linked.insert(8)
-    linked.insert(3)
-    linked.insert(1)
-    linked.insert(7)
-    linked.insert(9)
-    linked.insert(11)
-    linked.insert(10)
-    return linked
+# @pytest.fixture
+# def linked_instance4():
+#     linked = Linked_List()
+#     linked.insert(2)
+#     linked.insert(8)
+#     linked.insert(3)
+#     linked.insert(1)
+#     linked.insert(7)
+#     linked.insert(9)
+#     linked.insert(11)
+#     linked.insert(10)
+#     return linked

@@ -117,7 +117,7 @@ class Linked_List:
                 index_counter -= 1
                 current = current.next
         if not_found:
-            raise ValueError
+            return None
         else:
             return value
 
