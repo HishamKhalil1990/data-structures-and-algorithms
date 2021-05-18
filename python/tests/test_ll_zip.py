@@ -28,7 +28,7 @@ def test_second_list_is_bigger():
     expected = "head -> [3] -> [1] -> [2] -> [5] -> [6] -> [7] -> [10] -> X"
     assert actual == expected
 
-def test_first_list_is_equal_to_second_list():
+def test_both_lists_are_equal():
     list1 = Linked_List()
     list1.insert(2)
     list1.insert(3)
@@ -37,4 +37,29 @@ def test_first_list_is_equal_to_second_list():
     list2.insert(7)
     actual = zip_Lists(list1,list2)
     expected = "head -> [3] -> [7] -> [2] -> [10] -> X"
+    assert actual == expected
+
+def test_first_linked_list_is_empty():
+    list1 = Linked_List()
+    list2 = Linked_List()
+    list2.insert(10)
+    list2.insert(7)
+    actual = zip_Lists(list1,list2)
+    expected = "head -> [7] -> [10] -> X"
+    assert actual == expected
+
+def test_second_linked_list_is_empty():
+    list1 = Linked_List()
+    list1.insert(2)
+    list1.insert(3)
+    list2 = Linked_List()
+    actual = zip_Lists(list1,list2)
+    expected = "head -> [3] -> [2] -> X"
+    assert actual == expected
+
+def test_both_are_empty():
+    list1 = Linked_List()
+    list2 = Linked_List()
+    actual = zip_Lists(list1,list2)
+    expected = "head -> X"
     assert actual == expected
