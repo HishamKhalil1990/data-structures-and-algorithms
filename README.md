@@ -20,3 +20,4 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 | [array_shift](python/code_challenges/array_shift) | [array_shift.py](python/code_challenges/array_shift/array_shift/array_shift.py) |
 | [array_binary_search](python/code_challenges/array_binary_search) | [array_binary_search](python/code_challenges/array_binary_search/array_binary_search/array_binary_search.py) |
 | [linked_list](python/code_challenges/Data_Structures/linked_list/linked_list) | [linked_list](python/code_challenges/Data_Structures/linked_list/linked_list/linked_list.py) |
+| [ll_zip](python/code_challenges/ll_zip/ll_zip) | [ll_zip](python/code_challenges/ll_zip/ll_zip/ll_zip.py) |

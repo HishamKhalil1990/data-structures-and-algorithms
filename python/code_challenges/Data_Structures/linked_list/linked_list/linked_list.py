@@ -49,7 +49,7 @@ class Linked_List:
                 else:
                     stored_data += "-> X"
         else:
-            return "empty"
+            return "head -> X"
         return stored_data
 
     def append(self,value):
@@ -117,7 +117,7 @@ class Linked_List:
                 index_counter -= 1
                 current = current.next
         if not_found:
-            raise ValueError
+            return None
         else:
             return value
 
