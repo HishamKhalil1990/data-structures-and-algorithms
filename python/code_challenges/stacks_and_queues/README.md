@@ -22,4 +22,6 @@
     - `peek` take no argument and returns the value of the node located in the front of the queue, without removing it from the queue and should raise exception when called on empty queue
     - `is_empty` takes no argument, and returns a boolean indicating whether or not the queue is empty.
 
+[stacks-queue](stacks_and_queues/stacks_and_queues.py)
+
 PR link https://github.com/HishamKhalil1990/data-structures-and-algorithms/pull/32
