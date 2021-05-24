@@ -49,8 +49,10 @@ class Stack():
             string = ""
             current = self.top
             while current != None:
-                string += str(current.value) + ' '
+                string += f"[{str(current.value)}]"
                 current = current.next
+                if current != None:
+                    string += "->"
             return string
 
 class Queue():
