@@ -5,12 +5,10 @@
 ### the challenge is to create a Stack class to connect nodes in one direction where the new added node is put at the top and all methods are applied at the top node and create a Queue class to connect nodes in one direction where the new added node is put in rear except the first node is put in front and all methods are applied at the top node
 
 ## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 ### i create the Stack class to add a given value in a node, assign the existed top as a next to the node and put the node as top, the nodes are connected to each other in one direction. i create the Queue class to add a given value in a node, assign the existed rear as a next to the node and put the node as rear except for the first node it will be added to front, the nodes are connected to each other in one direction
 ### Big O is 1
 
 ## API
-<!-- Description of each method publicly available to your Stack and Queue-->
 - Stack:
     - `push` takes any value as an argument and adds a new node with that value to the top of the stack with an O(1) Time performance.
     - `pop` takes no argument, removes the node from the top of the stack, and returns the node’s value and should raise exception when called on empty stack
