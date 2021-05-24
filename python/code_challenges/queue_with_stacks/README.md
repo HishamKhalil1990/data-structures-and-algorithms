@@ -2,7 +2,8 @@
 ### the challenges is to build a Queue data structure behavior for a Pseudo Queue class using two Stacks instead of using front and rear parameters as in Queue. the results of enqueue and dequeue in the Pseudo Queue should be identical for the same process in Queue
 
 ## Whiteboard Process
-<!-- Embedded whiteboard image -->
+### queue with stacks
+![ex](img/queue-with-stacks.jpg)
 
 ## Approach & Efficiency
 ### i created a class Pseudo_Queue which can enqueue a value by createing a node, passing the value to the node and add it to the first stack also it can dequeue nodes from the first entered nodes
@@ -15,4 +16,4 @@
 
 [queue-with-stacks](queue_with_stacks/queue_with_stacks.py)
 
-PR link https://github.com/HishamKhalil1990/data-structures-and-algorithms/pull/32
+PR link https://github.com/HishamKhalil1990/data-structures-and-algorithms/pull/34
