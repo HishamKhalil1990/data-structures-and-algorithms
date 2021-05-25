@@ -51,7 +51,7 @@ class Animal_Shelter:
                         break
                     previous = current
                     current = current.next
-                return value
+            return value
         else:
             return value
 
@@ -86,6 +86,8 @@ if __name__ == "__main__":
     shelter.enqueue("dog")
     print(shelter)
     shelter.enqueue("cat")
+    print(shelter)
+    shelter.enqueue("dog")
     print(shelter)
     print(shelter.dequeue("bird"))
     print(shelter)
