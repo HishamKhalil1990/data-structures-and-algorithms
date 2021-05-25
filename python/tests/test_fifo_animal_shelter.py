@@ -39,6 +39,10 @@ def test_dequeue_multiple_dog(shelter):
     actual = str(shelter)
     assert actual == expected
 
+def test_dequeue_another_animal(shelter):
+    actual = shelter.dequeue('horse')
+    assert not actual
+
 @pytest.fixture
 def shelter():
     shelter = Animal_Shelter()
