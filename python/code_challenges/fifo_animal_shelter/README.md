@@ -17,4 +17,4 @@
     - `dequeue` takes no argument, removes cat or dog object from the front of the queue, and returns the dequeued object value and should return `None` if the argument is not cat or dog
         - to dequeue prefered then `shelter.dequeue("cat")`
 
-PR link
+PR link https://github.com/HishamKhalil1990/data-structures-and-algorithms/pull/35
