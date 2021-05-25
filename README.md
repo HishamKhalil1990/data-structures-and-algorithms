@@ -23,3 +23,5 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 | [ll_zip](python/code_challenges/ll_zip/ll_zip) | [ll_zip](python/code_challenges/ll_zip/ll_zip/ll_zip.py) |
 | [stack-and-queue](python/code_challenges/stacks_and_queues/stacks_and_queues) | [stack-and-queue](python/code_challenges/stacks_and_queues/stacks_and_queues/stacks_and_queues.py) |
 | [queue-with-stacks](python/code_challenges/queue_with_stacks/queue_with_stacks) | [queue-with-stacks](python/code_challenges/queue_with_stacks/queue_with_stacks/queue_with_stacks.py) |
+| [fifo-animal-shelter](python/code_challenges/fifo_animal_shelter/fifo_animal_shelter) | [fifo-animal-shelter](python/code_challenges/fifo_animal_shelter/fifo_animal_shelter/fifo_animal_shelter.py) |
+
