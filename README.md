@@ -24,4 +24,5 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 | [stack-and-queue](python/code_challenges/stacks_and_queues/stacks_and_queues) | [stack-and-queue](python/code_challenges/stacks_and_queues/stacks_and_queues/stacks_and_queues.py) |
 | [queue-with-stacks](python/code_challenges/queue_with_stacks/queue_with_stacks) | [queue-with-stacks](python/code_challenges/queue_with_stacks/queue_with_stacks/queue_with_stacks.py) |
 | [fifo-animal-shelter](python/code_challenges/fifo_animal_shelter/fifo_animal_shelter) | [fifo-animal-shelter](python/code_challenges/fifo_animal_shelter/fifo_animal_shelter/fifo_animal_shelter.py) |
+| [multi-bracket-validation](python/code_challenges/multi_bracket_validation/multi_bracket_validation) | [multi-bracket-validation](python/code_challenges/multi_bracket_validation/multi_bracket_validation/multi_bracket_validation.py) |
 
