@@ -21,5 +21,6 @@
     - `add(value)` accepts a value, and adds a new node with that value in the correct location in the binary search tree
     - `contains(value)` accepts a value, and returns a boolean indicating whether or not the value is in the tree at least once
 
-## PR link
-## []()
+## PR link https://github.com/HishamKhalil1990/data-structures-and-algorithms/pull/38
+
+[code](tree/tree.py)
