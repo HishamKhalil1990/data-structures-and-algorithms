@@ -91,6 +91,7 @@ class Binary_search_tree:
         return returned_string
 
     def contains(self, value, root=None):
+        value = int(value)
         if not self.root:
             raise EmptyTreeException
         elif not root:
@@ -118,8 +119,10 @@ if __name__ == "__main__":
     node1.left.right = Tree_Node('E')
     node1.right.left = Tree_Node('F')
     binary_tree = BinaryTree(node1)
+    print(binary_tree.pre_order())
+    print(binary_tree.in_order())
+    print(binary_tree.post_order())
     tree = Binary_search_tree('23')
-    # print(tree.add(23))
     print(tree.add(8))
     print(tree.add(42))
     print(tree.add(4))
@@ -129,6 +132,7 @@ if __name__ == "__main__":
     print(tree.add(15))
     print(tree.add(22))
     print(tree.add(105))
+    print('True section for contains method')
     print(tree.contains(23))
     print(tree.contains(8))
     print(tree.contains(42))
@@ -139,8 +143,7 @@ if __name__ == "__main__":
     print(tree.contains(15))
     print(tree.contains(22))
     print(tree.contains(105))
-    print('go to wrong')
-    # print(tree.contains(23))
+    print('false section for contains method')
     print(tree.contains(7))
     print(tree.contains(40))
     print(tree.contains(3))
@@ -150,6 +153,3 @@ if __name__ == "__main__":
     print(tree.contains(10))
     print(tree.contains(78))
     print(tree.contains(90))
-    print(binary_tree.pre_order())
-    print(binary_tree.in_order())
-    print(binary_tree.post_order())
