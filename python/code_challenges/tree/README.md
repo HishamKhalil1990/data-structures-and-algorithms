@@ -13,6 +13,7 @@
 - Pre-order: `root >> left >> right`
 - In-order: `left >> root >> right`
 - Post-order: `left >> right >> root`
+### also the Binary Tree can determine the maximum values in the Tee's nodes.
 ### i created the binary search tree to add a node in to the left if the enterd value is less then the root value -if left is empty- if not go to the left node and repeat the process and add a node to the right if the enterd value is bigger then the root value -if right is empty- if not go to the right node and repeat the process
 
 ## API
@@ -26,6 +27,6 @@
     - `add(value)` accepts a value, and adds a new node with that value in the correct location in the binary search tree
     - `contains(value)` accepts a value, and returns a boolean indicating whether or not the value is in the tree at least once
 
-## PR link https://github.com/HishamKhalil1990/data-structures-and-algorithms/pull/38
+## PR link https://github.com/HishamKhalil1990/data-structures-and-algorithms/pull/39
 
 [code](tree/tree.py)
