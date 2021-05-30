@@ -1,6 +1,10 @@
 # Trees
 ### Trees consists of nodes which are connected with each other. there are several kinds of trees. two of them are the binary tree and the binary search tree. binary Trees restrict the number of children to two which are the left and the right children. there is no specific sorting order for a binary tree. binary Search Tree (BST) is a type of tree that does have some structure attached to it. In a BST, nodes are organized in a manner where all values that are smaller than the root are placed to the left, and all values that are larger than the root are placed to the right.
 
+## Whiteboard Process
+### find-maximum-value
+![ex](img/find-maximum-value.jpg)
+
 ## Challenge
 ### the challenge is to create a binary tree class that can return a collection from a preorder traversal, a collection from an inorder traversal and collection from a postorder traversal. also to create a binary search tree that can add a node in its correct location and search for a given value through tree nodes
 
@@ -17,6 +21,7 @@
     - `pre_order()`return a collection from a preorder traversal
     - `in_order()` return a collection from an inorder traversal
     - `post_order()` return a collection from a postorder traversal
+    - `find_maximum_value()` return the maximum value in a Binary Tree
 - Binary Search Tree:
     - `add(value)` accepts a value, and adds a new node with that value in the correct location in the binary search tree
     - `contains(value)` accepts a value, and returns a boolean indicating whether or not the value is in the tree at least once

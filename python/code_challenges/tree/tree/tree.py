@@ -16,6 +16,7 @@ class BinaryTree:
     def __init__(self, root=None):
         self.root = root
         self.tree_list = []
+        self.maximum = None
 
     # Pre-order traversal
     def pre_order(self):
@@ -52,6 +53,23 @@ class BinaryTree:
             self.tree_list.append(root.value)
         inner_func(self.root)
         return self.tree_list
+
+    def find_maximum_value(self):
+        self.maximum = None
+        def inner_func(root):
+            if not self.maximum:
+                if not root:
+                    raise EmptyTreeException
+                else:
+                    self.maximum = root.value
+            elif root.value >= self.maximum:
+                self.maximum = root.value
+            if root.left:
+                inner_func(root.left)
+            if root.right:
+                inner_func(root.right)
+        inner_func(self.root)
+        return self.maximum
 
 class Binary_search_tree:
     def __init__(self, root=None):
@@ -112,44 +130,48 @@ class Binary_search_tree:
         return self.found
 
 if __name__ == "__main__":
-    node1 = Tree_Node('A')
-    node1.left = Tree_Node('B')
-    node1.right = Tree_Node('C')
-    node1.left.left = Tree_Node('D')
-    node1.left.right = Tree_Node('E')
-    node1.right.left = Tree_Node('F')
+    node1 = Tree_Node(2)
+    node1.left = Tree_Node(7)
+    node1.right = Tree_Node(5)
+    node1.left.left = Tree_Node(2)
+    node1.left.right = Tree_Node(6)
+    node1.left.right.left = Tree_Node(5)
+    node1.left.right.left = Tree_Node(11)
+    node1.right.right = Tree_Node(9)
+    node1.right.right.left = Tree_Node(4)
     binary_tree = BinaryTree(node1)
-    print(binary_tree.pre_order())
-    print(binary_tree.in_order())
-    print(binary_tree.post_order())
-    tree = Binary_search_tree('23')
-    print(tree.add(8))
-    print(tree.add(42))
-    print(tree.add(4))
-    print(tree.add(16))
-    print(tree.add(27))
-    print(tree.add(85))
-    print(tree.add(15))
-    print(tree.add(22))
-    print(tree.add(105))
-    print('True section for contains method')
-    print(tree.contains(23))
-    print(tree.contains(8))
-    print(tree.contains(42))
-    print(tree.contains(4))
-    print(tree.contains(16))
-    print(tree.contains(27))
-    print(tree.contains(85))
-    print(tree.contains(15))
-    print(tree.contains(22))
-    print(tree.contains(105))
-    print('false section for contains method')
-    print(tree.contains(7))
-    print(tree.contains(40))
-    print(tree.contains(3))
-    print(tree.contains(106))
-    print(tree.contains(50))
-    print(tree.contains(65))
-    print(tree.contains(10))
-    print(tree.contains(78))
-    print(tree.contains(90))
+    print(binary_tree.find_maximum_value())
+    # print(binary_tree.pre_order())
+    # print(binary_tree.in_order())
+    # print(binary_tree.post_order())
+    # tree = Binary_search_tree('23')
+    # print(tree.add(8))
+    # print(tree.add(42))
+    # print(tree.add(4))
+    # print(tree.add(16))
+    # print(tree.add(27))
+    # print(tree.add(85))
+    # print(tree.add(15))
+    # print(tree.add(22))
+    # print(tree.add(105))
+    # print('True section for contains method')
+    # print(tree.contains(23))
+    # print(tree.contains(8))
+    # print(tree.contains(42))
+    # print(tree.contains(4))
+    # print(tree.contains(16))
+    # print(tree.contains(27))
+    # print(tree.contains(85))
+    # print(tree.contains(15))
+    # print(tree.contains(22))
+    # print(tree.contains(105))
+    # print('false section for contains method')
+    # print(tree.contains(7))
+    # print(tree.contains(40))
+    # print(tree.contains(3))
+    # print(tree.contains(106))
+    # print(tree.contains(50))
+    # print(tree.contains(65))
+    # print(tree.contains(10))
+    # print(tree.contains(78))
+    # print(tree.contains(90))
