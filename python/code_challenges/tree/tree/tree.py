@@ -3,6 +3,61 @@ class EmptyTreeException(Exception):
     def __init__(self):
         pass
 
+class Node():
+    def __init__(self,value=None):
+        self.value = value
+        self.next = None
+
+class Queue():
+    def __init__(self):
+        self.front = None
+        self.rear = None
+        self.length = 0
+
+    def is_empty(self):
+        if not self.front:
+            return False
+        return True
+
+    def enqueue(self,value):
+        if not self.is_empty():
+            self.front = Node(value)
+            self.rear = self.front
+        else:
+            new_node = Node(value)
+            self.rear.next = new_node
+            self.rear = new_node
+        self.length += 1
+
+    def dequeue(self):
+        if not self.is_empty():
+            raise EmptyTreeException
+        else:
+            value = self.front.value
+            self.front = self.front.next
+            self.length -= 1
+            return value
+
+    def peek(self):
+        if not self.is_empty():
+            raise EmptyTreeException
+        else:
+            return self.front.value
+
+    def __str__(self):
+        if not self.is_empty():
+            raise EmptyTreeException
+        else:
+            string = ""
+            current = self.front
+            while current != None:
+                string += str(current.value) + ' '
+                current = current.next
+            return string
+
+    def __len__(self):
+        return self.length
+
 class Tree_Node:
     def __init__(self, value=None):
         self.value = value
@@ -17,6 +72,7 @@ class BinaryTree:
         self.root = root
         self.tree_list = []
         self.maximum = None
+        self.roots = Queue()
 
     # Pre-order traversal
     def pre_order(self):
@@ -70,6 +126,29 @@ class BinaryTree:
                 inner_func(root.right)
         inner_func(self.root)
         return self.maximum
+
+    def breadth_first(self,tree):
+        if not tree.root:
+            raise EmptyTreeException
+        self.roots = Queue()
+        self.roots.enqueue(tree.root)
+        self.tree_list = []
+        self.tree_list.append(self.roots.peek().value)
+        def inner_func(roots):
+            for num in range(len(roots)):
+                left = roots.peek().left
+                right = roots.peek().right
+                roots.dequeue()
+                if left:
+                    self.tree_list.append(left.value)
+                    self.roots.enqueue(left)
+                if right:
+                    self.tree_list.append(right.value)
+                    self.roots.enqueue(right)
+            if len(roots) > 0:
+                inner_func(roots)
+        inner_func(self.roots)
+        return self.tree_list
 
 class Binary_search_tree:
     def __init__(self, root=None):
@@ -136,11 +215,12 @@ if __name__ == "__main__":
     node1.left.left = Tree_Node(2)
     node1.left.right = Tree_Node(6)
     node1.left.right.left = Tree_Node(5)
-    node1.left.right.left = Tree_Node(11)
+    node1.left.right.right = Tree_Node(11)
     node1.right.right = Tree_Node(9)
     node1.right.right.left = Tree_Node(4)
     binary_tree = BinaryTree(node1)
-    print(binary_tree.find_maximum_value())
+    print(binary_tree.breadth_first(binary_tree))
+    # print(binary_tree.find_maximum_value())
     # print(binary_tree.pre_order())
     # print(binary_tree.in_order())
     # print(binary_tree.post_order())
