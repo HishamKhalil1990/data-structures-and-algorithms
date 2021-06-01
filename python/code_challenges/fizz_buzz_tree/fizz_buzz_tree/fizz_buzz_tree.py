@@ -13,10 +13,10 @@ def Fizz_Buzz_Tree(Binary_tree):
             return value
 
     root = Binary_tree.root
+    if not root:
+            raise EmptyTreeException
     new_root = Tree_Node(root.value)
     new_tree = BinaryTree(new_root)
-    if not new_root:
-            raise EmptyTreeException
     roots = Queue()
     roots.enqueue(root)
     new_root.value = fuzz_buzz(new_root.value)
@@ -46,15 +46,15 @@ def Fizz_Buzz_Tree(Binary_tree):
     return new_tree
 
 if __name__ == "__main__":
-    node1 = Tree_Node(2)
-    node1.left = Tree_Node(7)
-    node1.right = Tree_Node(5)
-    node1.left.left = Tree_Node(2)
-    node1.left.right = Tree_Node(6)
-    node1.left.right.left = Tree_Node(5)
-    node1.left.right.right = Tree_Node(11)
-    node1.right.right = Tree_Node(9)
-    node1.right.right.left = Tree_Node(4)
+    node1 = Tree_Node(1)
+    node1.left = Tree_Node(13)
+    node1.right = Tree_Node(27)
+    node1.left.left = Tree_Node(33)
+    node1.left.right = Tree_Node(56)
+    node1.left.right.left = Tree_Node(9)
+    node1.left.right.right = Tree_Node(17)
+    node1.right.right = Tree_Node(15)
+    node1.right.right.left = Tree_Node(37)
     binary_tree = BinaryTree(node1)
     new_bt = Fizz_Buzz_Tree(binary_tree)
     print(new_bt.breadth_first(new_bt))
