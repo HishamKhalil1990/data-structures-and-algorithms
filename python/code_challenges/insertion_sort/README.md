@@ -17,6 +17,6 @@
 ### to sort list items with intgers values then:
 - insert the list as argument in inseration_sort as `inseration_sort(arr)`
 ### to run tests then:
-- for tests in **test_insertion_sort.py** run `python -m poetry run python -m pytest -v tests`
+- for tests in **test_insertion_sort.py** run `pytest tests/test_insertion_sort.py`
 ### [code](insertion_sort.py)
-### [PR-link]()
+### [PR-link](https://github.com/HishamKhalil1990/data-structures-and-algorithms/pull/42)
