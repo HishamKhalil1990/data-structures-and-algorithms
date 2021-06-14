@@ -27,4 +27,4 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 | [multi-bracket-validation](python/code_challenges/multi_bracket_validation/multi_bracket_validation) | [multi-bracket-validation](python/code_challenges/multi_bracket_validation/multi_bracket_validation/multi_bracket_validation.py) |
 | [tree](python/code_challenges/tree/tree) | [tree](python/code_challenges/tree/tree/tree.py) |
 | [insertion-sort](python/code_challenges/insertion_sort) | [insertion-sort](python/code_challenges/insertion_sort/insertion_sort.py) |
-
+| [merge-sort](python/code_challenges/merge_sort) | [merge-sort](python/code_challenges/merge_sort/merge_sort.py) |
