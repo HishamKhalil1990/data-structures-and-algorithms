@@ -19,4 +19,4 @@
 ### to run tests then:
 - for tests in **test_insertion_sort.py** run `pytest --verbose tests/test_merge_sort.py`
 ### [code](merge_sort.py)
-### [PR-link](https://github.com/HishamKhalil1990/data-structures-and-algorithms/pull/42)
+### [PR-link](https://github.com/HishamKhalil1990/data-structures-and-algorithms/pull/43)
