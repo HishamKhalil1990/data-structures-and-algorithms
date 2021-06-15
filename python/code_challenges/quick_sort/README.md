@@ -18,5 +18,5 @@
 - insert (list, left = 0 and right = list length - 1) as arguments in quickSort as `quickSort(arr,0,len(arr)-1)`
 ### to run tests then:
 - for tests in **test_insertion_sort.py** run `pytest --verbose tests/test_quick_sort.py`
-### [PR-link]()
+### [PR-link](https://github.com/HishamKhalil1990/data-structures-and-algorithms/pull/44)
 ### [code](quick_sort.py)
