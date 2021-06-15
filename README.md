@@ -28,3 +28,4 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 | [tree](python/code_challenges/tree/tree) | [tree](python/code_challenges/tree/tree/tree.py) |
 | [insertion-sort](python/code_challenges/insertion_sort) | [insertion-sort](python/code_challenges/insertion_sort/insertion_sort.py) |
 | [merge-sort](python/code_challenges/merge_sort) | [merge-sort](python/code_challenges/merge_sort/merge_sort.py) |
+| [quick-sort](python/code_challenges/quick_sort) | [quick-sort](python/code_challenges/quick_sort/quick_sort.py) |
