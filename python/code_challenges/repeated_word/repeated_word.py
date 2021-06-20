@@ -10,7 +10,7 @@ def repeated_word(string):
       first_word = ''
       repeated_once = False
     if char !=" ":
-      if char != ',' or char != '.':
+      if char != ',':
         first_word += char.lower()
     else:
       comparison_word = ''
@@ -19,7 +19,7 @@ def repeated_word(string):
       repeated_twice = False
       for char in string:
         if char !=" ":
-          if char != ',' or char != '.':
+          if char != ',':
             comparison_word += char.lower()
         else:
           if comparison_word == first_word:

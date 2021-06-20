@@ -30,3 +30,4 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 | [merge-sort](python/code_challenges/merge_sort) | [merge-sort](python/code_challenges/merge_sort/merge_sort.py) |
 | [quick-sort](python/code_challenges/quick_sort) | [quick-sort](python/code_challenges/quick_sort/quick_sort.py) |
 | [hashtable](python/code_challenges/hashtable) | [hashtable](python/code_challenges/hashtable/hashtable.py) |
+| [repeated_word](python/code_challenges/repeated_word) | [repeated_word](python/code_challenges/repeated_word/repeated_word.py) |
