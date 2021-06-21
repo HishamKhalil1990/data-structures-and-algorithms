@@ -1,5 +1,5 @@
 # import pytest
-# from code_challenges.tree.tree.tree import Tree_Node,BinaryTree,Binary_search_tree,EmptyTreeException
+# from code_challenges.tree.tree import Tree_Node,BinaryTree,Binary_search_tree,EmptyTreeException
 
 
 # def test_empty_tree():
