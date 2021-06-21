@@ -1,47 +1,19 @@
+from .hashtable import HashTable
+
 def repeated_word(string):
-  first_word = ''
-  first_word_location = 0
-  second_word = ''
-  second_word_location = 0
-  repeated_once = False
-  found = False
-  for char in string:
-    if repeated_once:
-      first_word = ''
-      repeated_once = False
-    if char !=" ":
-      if char != ',':
-        first_word += char.lower()
-    else:
-      comparison_word = ''
-      counter = 0
-      repeated_once = False
-      repeated_twice = False
-      for char in string:
+    word = ""
+    hashtable = HashTable()
+    for char in string:
         if char !=" ":
-          if char != ',':
-            comparison_word += char.lower()
+            if char != ',':
+                word += char.lower()
         else:
-          if comparison_word == first_word:
-            if not repeated_once:
-              repeated_once = True
+            if not hashtable.contains(word):
+                hashtable.add(word,1)
+                word = ""
             else:
-              repeated_twice = True
-              first_word_location = counter
-            comparison_word = ''
-          else:
-            counter += 1
-            comparison_word = ''
-        if repeated_twice:
-          if first_word_location < second_word_location or second_word_location == 0:
-            second_word = first_word
-            second_word_location = first_word_location
-            first_word = ""
-            found = True
-            break
-  if not found:
-    return False
-  return second_word
+                return word
+
 
 if __name__ == '__main__':
   print(repeated_word("Once upon a time, there was a brave princess who..."))
