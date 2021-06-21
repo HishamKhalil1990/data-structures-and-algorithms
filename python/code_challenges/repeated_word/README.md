@@ -3,7 +3,7 @@
 ## Whiteboard Process
 ![ex](img/Untitled.jpg)
 ## Approach & Efficiency
-### i created the function to iterate for each char inside the string to make a word then inside this loop iterate again to make a comparison word. for each word, it will be compared with all string words to find if it is repeated or not and find the place for the repetition
+### i created the function to iterate for each char inside the string to make a word then check if it is inside the hashtable. if it is not it will be added, else -it exists- then it will be returned as the first repeated
 Time= O(N^2)
 space = O(1)
 ## Solution
@@ -13,4 +13,4 @@ space = O(1)
 - use `pytest --verbose  tests/test_repeated_word.py`
 
 ### [code](repeated_word.py)
-### [PR](https://github.com/HishamKhalil1990/data-structures-and-algorithms/pull/46)
+### [PR](https://github.com/HishamKhalil1990/data-structures-and-algorithms/pull/47)
