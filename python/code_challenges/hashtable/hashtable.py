@@ -4,6 +4,7 @@ class HashTable():
     def __init__(self,size=1024):
         self.size = size
         self._buckets = [None]*size
+        self.keys_list = []
 
     def _hash(self,key):
         sum = 0
@@ -16,7 +17,9 @@ class HashTable():
         index = self._hash(key)
         if not self._buckets[index]:
             self._buckets[index] = Linked_List()
-        return self._buckets[index].append([key,value])
+        added = self._buckets[index].append([key,value])
+        self.keys_list.append(key)
+        return added
 
     def get(self,key):
         index = self._hash(key)
@@ -40,6 +43,16 @@ class HashTable():
                 return True
             return False
 
+    def keys(self):
+        return self.keys_list
+
+    def __str__(self):
+        string = ''
+        for bucket in self._buckets:
+            if bucket:
+                string += str(bucket)
+        return string
+
 if __name__ == "__main__":
     hashtable = HashTable()
     print(hashtable.add("ahmad", 30))
@@ -54,5 +67,6 @@ if __name__ == "__main__":
     print(hashtable.contains("hisham"))
     print(hashtable._hash('house'))
     # print(hashtable.get("hisham"))
+    print(hashtable.keys_list)
 
 
