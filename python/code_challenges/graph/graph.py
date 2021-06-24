@@ -1,140 +1,67 @@
-from ..Data_Structures.linked_list.linked_list.linked_list  import Linked_List,Node
+class Vertex:
 
-# class  Adjacency_list:
-
-#     def __init__(self):
-#         self.node_list = []
-
-#     def add_node(self,value):
-#         node = Node(value)
-#         linked = Linked_List()
-#         linked.head = node
-#         self.node_list.append(linked)
-#         return node
-
-#     def add_edge(self,node1=None,node2=None,weight=0):
-#         first_linked = None
-#         second_linked = None
-#         for linked in self.node_list:
-#             if linked.head.data == node1:
-#                 first_linked = linked
-#             elif linked.head.data == node2:
-#                 second_linked = linked
-#         if first_linked or second_linked:
-#             if first_linked:
-#                 if second_linked:
-#                     first_linked.append({second_linked.head.data:weight})
-#                 else:
-#                     first_linked.append({second_linked:weight})
-#             if second_linked:
-#                 if first_linked:
-#                     second_linked.append({first_linked.head.data:weight})
-#                 else:
-#                     second_linked.append({first_linked:weight})
-
-#     def get_nodes(self):
-#         nodes = []
-#         for linked in self.node_list:
-#             nodes.append(linked.head.data)
-#         if len(nodes) == 0:
-#             return None
-#         return nodes
-
-#     def get_neighbors(self,node):
-#         neigbhors = []
-#         for linked in self.node_list:
-#             if linked.head.data == node:
-#                 current = linked.head
-#                 while current:
-#                     neigbhors.append(current.data)
-#                     current = current.next
-#         return neigbhors
-
-#     def size(self):
-#         return len(self.node_list)
-
-class ANode:
-
-    def __init__(self,data):
-        self.data = data
-        self.edges = []
+    def __init__(self,value):
+        self.value = value
 
     def __str__(self):
-        return f"{self.data}"
+        return f"{self.value}"
 
-class  Adjacency_list:
+class Edge:
+
+    def __init__(self,vertex,weight):
+        self.vertex = vertex
+        self.weight = weight
+
+class  Graph:
 
     def __init__(self):
-        self.node_list = []
+        self.adjacency_list = {}
 
     def add_node(self,value):
-        node = ANode(value)
-        linked = Linked_List()
-        linked.head = node
-        self.node_list.append(linked)
+        node = Vertex(value)
+        self.adjacency_list[node] = []
         return node
 
-    def add_edge(self,node1=None,node2=None,weight=0):
-        first_linked = None
-        second_linked = None
-        for linked in self.node_list:
-            if linked.head.data == node1:
-                first_linked = linked
-            elif linked.head.data == node2:
-                second_linked = linked
-        if first_linked or second_linked:
-            if first_linked:
-                if second_linked:
-                    first_linked.head.edges.append([second_linked.head,weight])
-                else:
-                    first_linked.head.edges.append([second_linked,weight])
-            if second_linked:
-                if first_linked:
-                    second_linked.head.edges.append([first_linked.head,weight])
-                else:
-                    second_linked.head.edges.append([first_linked,weight])
+    def add_edge(self,node1=None,node2=None,weight1=0):
+        if node1 not in self.adjacency_list:
+            raise KeyError
+        elif node2 not in self.adjacency_list:
+            raise KeyError
+        else:
+            edge = Edge(vertex=node2,weight=weight1)
+            self.adjacency_list[node1].append(edge)
+            edge = Edge(vertex=node1,weight=weight1)
+            self.adjacency_list[node2].append(edge)
 
     def get_nodes(self):
-        nodes = []
-        for linked in self.node_list:
-            nodes.append(linked.head.data)
-        if len(nodes) == 0:
-            return None
-        return nodes
+       return self.adjacency_list.keys()
 
     def get_neighbors(self,node):
-        neigbhors = []
-        for linked in self.node_list:
-            if linked.head.data == node:
-                current = linked.head
-                neigbhors.append(current.data)
-                for edge in current.edges:
-                    neigbhors.append([str(edge[0]),edge[1]])
-        return neigbhors
+        return self.adjacency_list.get(node,[])
 
     def size(self):
-        return len(self.node_list)
+        return len(self.adjacency_list)
 
 if __name__ == '__main__':
-    aj_list = Adjacency_list()
-    aj_list.add_node('a')
-    aj_list.add_node('b')
-    aj_list.add_node('c')
-    aj_list.add_node('d')
-    aj_list.add_node('e')
-    aj_list.add_node('f')
-    aj_list.add_edge('a','c')
-    aj_list.add_edge('a','d')
-    aj_list.add_edge('b','c')
-    aj_list.add_edge('b','f')
-    aj_list.add_edge('c','e')
-    aj_list.add_edge('d','e')
-    aj_list.add_edge('e','f')
-    print(aj_list.get_nodes())
-    print(aj_list.get_neighbors('a'))
-    print(aj_list.get_neighbors('b'))
-    print(aj_list.get_neighbors('c'))
-    print(aj_list.get_neighbors('d'))
-    print(aj_list.get_neighbors('e'))
-    print(aj_list.get_neighbors('f'))
-    print(aj_list.size())
+    graph = Graph()
+    node_a = graph.add_node('a')
+    node_b = graph.add_node('b')
+    node_c = graph.add_node('c')
+    node_d = graph.add_node('d')
+    node_e = graph.add_node('e')
+    node_f = graph.add_node('f')
+    graph.add_edge(node_a,node_c)
+    graph.add_edge(node_a,node_d)
+    graph.add_edge(node_b,node_c)
+    graph.add_edge(node_b,node_f)
+    graph.add_edge(node_c,node_e)
+    graph.add_edge(node_d ,node_e)
+    graph.add_edge(node_e,node_f)
+    print(graph.get_nodes())
+    print(graph.get_neighbors(node_a))
+    print(graph.get_neighbors(node_b))
+    print(graph.get_neighbors(node_c))
+    print(graph.get_neighbors(node_d))
+    print(graph.get_neighbors(node_e))
+    print(graph.get_neighbors(node_f))
+    print(graph.size())

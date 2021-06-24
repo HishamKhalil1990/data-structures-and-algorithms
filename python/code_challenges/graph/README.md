@@ -19,4 +19,4 @@ The function:
 * Gets the size of the graph.
 
 ### [code](graph.py)
-### [PR](https://github.com/HishamKhalil1990/data-structures-and-algorithms/pull/50)
+### [PR](https://github.com/HishamKhalil1990/data-structures-and-algorithms/pull/51)

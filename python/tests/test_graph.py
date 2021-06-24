@@ -1,94 +1,103 @@
 import pytest
-from code_challenges.graph.graph import Adjacency_list
+from code_challenges.graph.graph import Graph,Vertex
 
 def test_add_node():
     expected = 'a'
-    aj_list = Adjacency_list()
-    actual = aj_list.add_node('a')
-    assert str(actual) == expected
+    graph = Graph()
+    actual = graph.add_node('a').value
+    assert actual == expected
 
-def test_add_edge():
-    aj_list = Adjacency_list()
-    aj_list.add_node('a')
-    aj_list.add_node('b')
-    aj_list.add_edge('a','b')
+def test_add_edge_exists():
+    graph = Graph()
+    node_a = graph.add_node('a')
+    node_b = graph.add_node('b')
+    graph.add_edge(node_a,node_b)
     expected = ['b',0]
-    edge = aj_list.node_list[0].head.edges[0]
-    actual = [str(edge[0]),edge[1]]
-    assert actual == expected
-    aj_list.add_node('c')
-    aj_list.add_node('d')
-    aj_list.add_edge('c','d',3)
-    expected = ['d',3]
-    edge = aj_list.node_list[2].head.edges[0]
-    actual = [str(edge[0]),edge[1]]
+    edge = graph.adjacency_list[node_a][0]
+    actual = [edge.vertex.value,edge.weight]
     assert actual == expected
 
-def test_get_nodes(adjacency_list):
+def test_add_edge_does_not_exists():
+    with pytest.raises(KeyError):
+        graph = Graph()
+        node_a = graph.add_node('a')
+        node_b = Vertex('b')
+        graph.add_edge(node_a,node_b)
+
+def test_get_nodes(graph):
     expected = ['a', 'b', 'c', 'd', 'e', 'f']
-    actual = adjacency_list.get_nodes()
+    nodes = graph.get_nodes()
+    actual = []
+    for node in nodes:
+        actual.append(node.value)
     assert actual == expected
 
-def test_get_neighbors(adjacency_list):
+def test_get_neighbors(graph):
     expected = ['c', ['a', 0], ['b', 0], ['e', 0]]
-    actual = adjacency_list.get_neighbors('c')
+    nodes = graph.get_nodes()
+    for node in nodes:
+        if node.value == 'c':
+            node_c = node
+    neighbors = graph.get_neighbors(node_c)
+    actual = [node_c.value]
+    for edge in neighbors:
+        actual += [[edge.vertex.value,edge.weight]]
     assert actual == expected
 
-def test_get_neighbors_with_wieght(adjacency_list_2):
-    expected = ['c', ['a', 5], ['b', 7], ['e', 4]]
-    actual = adjacency_list_2.get_neighbors('c')
+def test_get_neighbors_with_wieght(graph_weight):
+    expected = ['c', ['a', 1], ['b', 5], ['e', 9]]
+    nodes = graph_weight.get_nodes()
+    for node in nodes:
+        if node.value == 'c':
+            node_c = node
+    neighbors = graph_weight.get_neighbors(node_c)
+    actual = [node_c.value]
+    for edge in neighbors:
+        actual += [[edge.vertex.value,edge.weight]]
     assert actual == expected
 
-def test_get_size(adjacency_list):
+def test_get_size(graph):
     expected = 6
-    actual = adjacency_list.size()
-    assert actual == expected
-
-def test_one_node_one_edge():
-    expected = ['a', ['None', 0]]
-    aj_list = Adjacency_list()
-    aj_list.add_node('a')
-    aj_list.add_edge('a')
-    actual = aj_list.get_neighbors('a')
+    actual = graph.size()
     assert actual == expected
 
 def test_empty_graph():
-    aj_list = Adjacency_list()
-    actual = aj_list.get_nodes()
+    graph = Graph()
+    actual = graph.get_nodes()
     assert not actual
 
 @pytest.fixture
-def adjacency_list():
-    aj_list = Adjacency_list()
-    aj_list.add_node('a')
-    aj_list.add_node('b')
-    aj_list.add_node('c')
-    aj_list.add_node('d')
-    aj_list.add_node('e')
-    aj_list.add_node('f')
-    aj_list.add_edge('a','c')
-    aj_list.add_edge('a','d')
-    aj_list.add_edge('b','c')
-    aj_list.add_edge('b','f')
-    aj_list.add_edge('c','e')
-    aj_list.add_edge('d','e')
-    aj_list.add_edge('e','f')
-    return aj_list
+def graph():
+    graph = Graph()
+    node_a = graph.add_node('a')
+    node_b = graph.add_node('b')
+    node_c = graph.add_node('c')
+    node_d = graph.add_node('d')
+    node_e = graph.add_node('e')
+    node_f = graph.add_node('f')
+    graph.add_edge(node_a,node_c)
+    graph.add_edge(node_a,node_d)
+    graph.add_edge(node_b,node_c)
+    graph.add_edge(node_b,node_f)
+    graph.add_edge(node_c,node_e)
+    graph.add_edge(node_d ,node_e)
+    graph.add_edge(node_e,node_f)
+    return graph
 
 @pytest.fixture
-def adjacency_list_2():
-    aj_list = Adjacency_list()
-    aj_list.add_node('a')
-    aj_list.add_node('b')
-    aj_list.add_node('c')
-    aj_list.add_node('d')
-    aj_list.add_node('e')
-    aj_list.add_node('f')
-    aj_list.add_edge('a','c',5)
-    aj_list.add_edge('a','d',3)
-    aj_list.add_edge('b','c',7)
-    aj_list.add_edge('b','f',1)
-    aj_list.add_edge('c','e',4)
-    aj_list.add_edge('d','e',8)
-    aj_list.add_edge('e','f',2)
-    return aj_list
+def graph_weight():
+    graph = Graph()
+    node_a = graph.add_node('a')
+    node_b = graph.add_node('b')
+    node_c = graph.add_node('c')
+    node_d = graph.add_node('d')
+    node_e = graph.add_node('e')
+    node_f = graph.add_node('f')
+    graph.add_edge(node_a,node_c,1)
+    graph.add_edge(node_a,node_d,3)
+    graph.add_edge(node_b,node_c,5)
+    graph.add_edge(node_b,node_f,7)
+    graph.add_edge(node_c,node_e,9)
+    graph.add_edge(node_d ,node_e,8)
+    graph.add_edge(node_e,node_f,4)
+    return graph
