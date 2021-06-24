@@ -121,3 +121,9 @@ class Linked_List:
         else:
             return value
 
+    def __iter__(self):
+        current = self.head
+        while current:
+            yield current.data
+            current = current.next
+
