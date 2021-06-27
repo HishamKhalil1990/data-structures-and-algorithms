@@ -66,10 +66,26 @@ def test_empty_graph():
     actual = graph.get_nodes()
     assert not actual
 
-def test_breadth_first(graph1):
+def test_breadth_first_1(graph1):
     expected = ['Pandora', 'Arendelle', 'Metroville', 'Monstroplolis', 'Narnia', 'Naboo']
     actual = []
     graph,node1 = graph1
+    for node in graph.breadth_first(node1):
+        actual.append(node.value)
+    assert actual == expected
+
+def test_breadth_first_2(graph2):
+    expected =  ['a', 'c', 'd', 'b', 'e', 'f']
+    actual = []
+    graph,node1 = graph2
+    for node in graph.breadth_first(node1):
+        actual.append(node.value)
+    assert actual == expected
+
+def test_breadth_first_3(graph3):
+    expected =  ['a', 'Naboo', 'e', 'c', 'Arendelle', 'Metroville']
+    actual = []
+    graph,node1 = graph3
     for node in graph.breadth_first(node1):
         actual.append(node.value)
     assert actual == expected
@@ -127,3 +143,39 @@ def graph1():
     graph.add_edge(node4, node6)
     graph.add_edge(node5, node6)
     return graph,node1
+
+@pytest.fixture
+def graph2():
+    graph = Graph()
+    node_a = graph.add_node('a')
+    node_b = graph.add_node('b')
+    node_c = graph.add_node('c')
+    node_d = graph.add_node('d')
+    node_e = graph.add_node('e')
+    node_f = graph.add_node('f')
+    graph.add_edge(node_a,node_c)
+    graph.add_edge(node_a,node_d)
+    graph.add_edge(node_b,node_c)
+    graph.add_edge(node_b,node_f)
+    graph.add_edge(node_c,node_e)
+    graph.add_edge(node_d ,node_e)
+    graph.add_edge(node_e,node_f)
+    return graph,node_a
+
+@pytest.fixture
+def graph3():
+    graph = Graph()
+    node_a = graph.add_node('a')
+    node_b = graph.add_node('Arendelle')
+    node_c = graph.add_node('c')
+    node_d = graph.add_node('Metroville')
+    node_e = graph.add_node('e')
+    node_f = graph.add_node('Naboo')
+    graph.add_edge(node_a,node_f)
+    graph.add_edge(node_b,node_e)
+    graph.add_edge(node_c,node_d)
+    graph.add_edge(node_e,node_a)
+    graph.add_edge(node_f,node_b)
+    graph.add_edge(node_a ,node_c)
+    graph.add_edge(node_d,node_f)
+    return graph,node_a
