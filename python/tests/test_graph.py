@@ -66,6 +66,14 @@ def test_empty_graph():
     actual = graph.get_nodes()
     assert not actual
 
+def test_breadth_first(graph1):
+    expected = ['Pandora', 'Arendelle', 'Metroville', 'Monstroplolis', 'Narnia', 'Naboo']
+    actual = []
+    graph,node1 = graph1
+    for node in graph.breadth_first(node1):
+        actual.append(node.value)
+    assert actual == expected
+
 @pytest.fixture
 def graph():
     graph = Graph()
@@ -101,3 +109,21 @@ def graph_weight():
     graph.add_edge(node_d ,node_e,8)
     graph.add_edge(node_e,node_f,4)
     return graph
+
+@pytest.fixture
+def graph1():
+    graph = Graph()
+    node1 = graph.add_node('Pandora')
+    node2 = graph.add_node('Arendelle')
+    node3 = graph.add_node('Metroville')
+    node4 = graph.add_node('Monstroplolis')
+    node5 = graph.add_node('Narnia')
+    node6 = graph.add_node('Naboo')
+    graph.add_edge(node1, node2)
+    graph.add_edge(node2, node3)
+    graph.add_edge(node3, node4)
+    graph.add_edge(node3, node5)
+    graph.add_edge(node3, node6)
+    graph.add_edge(node4, node6)
+    graph.add_edge(node5, node6)
+    return graph,node1
