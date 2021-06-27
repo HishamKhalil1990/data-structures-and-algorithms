@@ -98,7 +98,7 @@ class BinaryTree:
         inner_func(self.root)
         return self.tree_list
 
-    # in-order traversal
+    # post-order traversal
     def post_order(self):
         self.tree_list = []
         def inner_func(root):
